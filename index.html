@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="he">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta content="#0b1326" name="theme-color"/>
+<title>FitFuel – תזונת סטודנט חכמה</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: { extend: {
+    colors: {
+      "on-primary-fixed-variant": "#005236", "tertiary-fixed": "#acedff", "surface-container-high": "#222a3d",
+      "on-tertiary": "#003640", "surface-bright": "#31394d", "inverse-primary": "#006c49", "on-secondary": "#552100",
+      "on-error": "#690005", "outline": "#86948a", "surface-tint": "#4edea3", "surface-container": "#171f33",
+      "primary-fixed-dim": "#4edea3", "on-primary": "#003824", "background": "#0b1326", "primary-container": "#10b981",
+      "on-background": "#dae2fd", "secondary": "#ffb690", "error": "#ffb4ab", "on-error-container": "#ffdad6",
+      "on-surface": "#dae2fd", "on-secondary-fixed": "#341100", "inverse-surface": "#dae2fd", "surface-dim": "#0b1326",
+      "secondary-container": "#ec6a06", "surface-container-highest": "#2d3449", "tertiary": "#4cd7f6", "surface": "#0b1326",
+      "on-tertiary-container": "#003f4b", "tertiary-container": "#00b2d0", "primary": "#4edea3",
+      "on-secondary-fixed-variant": "#783200", "outline-variant": "#3c4a42", "surface-container-low": "#131b2e",
+      "on-surface-variant": "#bbcabf", "primary-fixed": "#6ffbbe", "error-container": "#93000a",
+      "secondary-fixed-dim": "#ffb690", "on-tertiary-fixed": "#001f26", "on-primary-fixed": "#002113",
+      "surface-container-lowest": "#060e20", "inverse-on-surface": "#283044", "tertiary-fixed-dim": "#4cd7f6",
+      "on-primary-container": "#00422b", "on-secondary-container": "#4a1c00", "on-tertiary-fixed-variant": "#004e5c",
+      "secondary-fixed": "#ffdbca", "surface-variant": "#2d3449", "carb": "#f59e0b"
+    },
+    borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", "2xl": "1rem", full: "9999px" },
+    spacing: { margin: "1rem", "space-lg": "1.25rem", "space-xs": "0.25rem", gutter: "1rem", "space-md": "1rem", "space-xl": "2rem", "space-sm": "0.5rem" },
+    fontFamily: {
+      "label-macro": ["Rubik"], "body-lg": ["Rubik"], "headline-md": ["Rubik"], "display-hero": ["Rubik"],
+      "metric-large-mobile": ["Rubik"], "label-badge": ["Rubik"], "headline-lg": ["Rubik"], "metric-large": ["Rubik"],
+      "body-md": ["Rubik"], "display-hero-mobile": ["Rubik"], "headline-sm": ["Rubik"]
+    },
+    fontSize: {
+      "label-macro": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "700" }],
+      "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+      "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+      "display-hero": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "800" }],
+      "metric-large-mobile": ["26px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "700" }],
+      "label-badge": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "600" }],
+      "headline-lg": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+      "metric-large": ["32px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }],
+      "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+      "display-hero-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }],
+      "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }]
+    }
+  } }
+};
+</script>
+<link href="css/app.css" rel="stylesheet"/>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface">
+
+<header id="hdr" class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)] pt-safe"></header>
+
+<main id="app" class="relative w-full max-w-md mx-auto px-margin pt-20 pb-28 min-h-screen"></main>
+
+<nav id="nav" class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.45)]" hidden>
+  <div class="grid grid-cols-4 items-center h-16 max-w-md mx-auto px-space-xs">
+    <a data-nav="dashboard" href="#/dashboard" class="nav-item"><span class="material-symbols-outlined text-2xl">monitoring</span><span class="font-label-macro text-label-macro mt-0.5">מעקב יומי</span></a>
+    <a data-nav="meals" href="#/meals" class="nav-item"><span class="material-symbols-outlined text-2xl">restaurant_menu</span><span class="font-label-macro text-label-macro mt-0.5">ארוחות</span></a>
+    <a data-nav="log" href="#/log" class="flex flex-col items-center justify-center -mt-5 min-h-[44px] group" aria-label="תיעוד ארוחה">
+      <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-[0_4px_16px_rgba(78,222,163,0.4)] group-active:scale-95 transition-transform duration-150"><span class="material-symbols-outlined text-2xl">add</span></div>
+      <span class="font-label-macro text-label-macro text-primary mt-1">הוספה</span>
+    </a>
+    <a data-nav="profile" href="#/profile" class="nav-item"><span class="material-symbols-outlined text-2xl">person</span><span class="font-label-macro text-label-macro mt-0.5">יעדים ופרופיל</span></a>
+  </div>
+</nav>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<noscript><p style="padding:2rem;text-align:center">האפליקציה דורשת JavaScript.</p></noscript>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/nutrition.js"></script>
+<script src="js/ui.js"></script>
+<script>var Views = {};</script>
+<script src="js/views/auth.js"></script>
+<script src="js/views/onboarding.js"></script>
+<script src="js/views/dashboard.js"></script>
+<script src="js/views/meals.js"></script>
+<script src="js/views/mealDetail.js"></script>
+<script src="js/views/quickLog.js"></script>
+<script src="js/views/profile.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

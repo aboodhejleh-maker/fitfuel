@@ -1,0 +1,65 @@
+/* FitFuel – סגנונות משלימים ל-Tailwind, לפי מערכת העיצוב Kinetic Fuel */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b1326;
+  color: #dae2fd;
+}
+body {
+  font-family: 'Rubik', system-ui, sans-serif;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+.pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+
+/* טוקנים מעורבים (₪12, 35g) לא מתהפכים בתוך טקסט עברי */
+.bidi { unicode-bidi: isolate; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+.material-symbols-outlined { user-select: none; line-height: 1; }
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  color: #bbcabf;
+  transition: color 150ms;
+}
+.nav-item.active { color: #4edea3; }
+
+.ring-glow { filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.4)); }
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+input[type='number'] { -moz-appearance: textfield; }
+
+.toast {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 72px);
+  left: 50%;
+  z-index: 60;
+  max-width: calc(100vw - 2rem);
+  padding: 0.75rem 1.1rem;
+  border-radius: 9999px;
+  background: #222a3d;
+  border: 1px solid rgba(78, 222, 163, 0.4);
+  color: #dae2fd;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -12px);
+  transition: opacity 200ms, transform 200ms;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+.toast.error { border-color: rgba(255, 180, 171, 0.6); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0ms !important; animation: none !important; }
+}
